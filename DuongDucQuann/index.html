@@ -8,120 +8,261 @@
 <link rel="icon" type="image/png" href="logo.png">
 <meta property="og:title" content="Dương Đức Quân – DuongDucQuann">
 <meta property="og:description" content="Hồ sơ cá nhân của Dương Đức Quân">
-<meta property="og:image" content="https://duongducquannn.vercel.app/logo.png">
-<meta property="og:url" content="https://duongducquannn.vercel.app">
+<meta property="og:image" content="logo.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #eef1f6;
-    --ink: #0f1b3d;
-    --muted: #4b5876;
-    --accent: #2f5bff;
+    --bg: #eef2f7;
+    --ink: #0f1c3f;
+    --muted: #53627e;
+    --fb-bg: #2b66ff;
+    --btn-ghost-bg: #e5ebf4;
+    --btn-border: #142145;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0c1330;
-      --ink: #eef1f6;
-      --muted: #a6b0cc;
-      --accent: #7d9bff;
+      --bg: #0c142b;
+      --ink: #eef2f7;
+      --muted: #9aa7c4;
+      --fb-bg: #3a72ff;
+      --btn-ghost-bg: #182449;
+      --btn-border: #ccd6ee;
     }
   }
+
   * { box-sizing: border-box; }
-  body {
+
+  html, body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 3.5rem 1.25rem 2.5rem;
     text-align: center;
-    padding: 2rem 1.5rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-wrap {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px -4px rgba(43, 102, 255, 0.25), 0 4px 10px rgba(15, 28, 63, 0.08);
+    margin-bottom: 1.25rem;
+    transition: transform 0.25s ease;
+  }
+  .logo-wrap:hover {
+    transform: scale(1.06);
   }
   .logo {
-    width: 96px; height: 96px; border-radius: 50%;
-    object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,.25);
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
   }
+
   h1 {
     margin: 0;
-    font-weight: 800;
-    font-size: clamp(2.5rem, 10vw, 5rem);
-    line-height: 1;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.4rem, 6.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--ink);
   }
-  .role { margin: 1rem 0 0; color: var(--muted); font-weight: 600; }
-  .links { margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+  .role {
+    margin: 0.65rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: -0.01em;
+  }
+
+  .links {
+    margin: 1.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    justify-content: center;
+    align-items: center;
+  }
+
   .btn {
-    display: inline-block;
-    padding: 0.75rem 1.4rem;
-    border-radius: 999px;
-    background: var(--accent);
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.88rem;
     font-weight: 600;
     text-decoration: none;
+    transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    line-height: 1.2;
+    white-space: nowrap;
   }
-  .btn:hover { filter: brightness(1.1); }
-  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
-  a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn-fb {
+    background: var(--fb-bg);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(43, 102, 255, 0.35);
+  }
+
+  .btn-ghost {
+    background: var(--btn-ghost-bg);
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1.5px var(--btn-border);
+  }
+
+  .btn-icon {
+    font-size: 0.95rem;
+    display: inline-block;
+    line-height: 1;
+  }
+
   .gallery {
-    margin: 2.5rem 0 0;
+    margin: 2.75rem 0 0;
+    width: 100%;
+    max-width: 820px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 0.75rem;
-    max-width: 900px;
   }
-  .gallery img {
-    width: 100%; aspect-ratio: 1; object-fit: cover;
-    border-radius: 12px; display: block;
-    transition: transform .2s;
+
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.6rem;
+    }
   }
-  .gallery img:hover { transform: scale(1.05); }
-  footer { margin-top: 3rem; color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    body {
+      padding: 2.25rem 1rem 2rem;
+    }
+  }
+
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(15, 28, 63, 0.08);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+  .gallery-item:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 22px rgba(15, 28, 63, 0.16);
+    z-index: 2;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  footer {
+    margin-top: 3.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
 </style>
 </head>
 <body>
-<main>
-  <img class="logo" src="logo.png" alt="Logo Dương Đức Quân">
+
+<div class="container">
+  <div class="logo-wrap">
+    <img class="logo" src="logo.png" alt="Logo Dương Đức Quân">
+  </div>
+
   <h1>Dương Đức Quân</h1>
   <p class="role">DuongDucQuann</p>
-  <p class="links">
-    <a class="btn" href="https://www.facebook.com/DuongDucQuann" target="_blank" rel="noopener">📘 Facebook</a>
-    <a class="btn ghost" href="https://www.tiktok.com/@duongducquann" target="_blank" rel="noopener">🎵 TikTok</a>
-    <a class="btn ghost" href="https://github.com/duongducquan" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/duongducquan" target="_blank" rel="noopener">LinkedIn</a>
-  </p>
-</main>
-<section class="gallery" aria-label="Hình ảnh">
-  <img src="hinhtngan/anh1.jpg.jpg" alt="Ảnh 1" loading="lazy">
-  <img src="hinhtngan/anh2.jpg" alt="Ảnh 2" loading="lazy">
-  <img src="hinhtngan/anh3.jpg" alt="Ảnh 3" loading="lazy">
-  <img src="hinhtngan/anh4.jpg" alt="Ảnh 4" loading="lazy">
-  <img src="hinhtngan/anh5.jpg" alt="Ảnh 5" loading="lazy">
-  <img src="hinhtngan/anh6.jpg" alt="Ảnh 6" loading="lazy">
-  <img src="hinhtngan/anh7.jpg" alt="Ảnh 7" loading="lazy">
-  <img src="hinhtngan/anh8.jpg" alt="Ảnh 8" loading="lazy">
-  <img src="hinhtngan/anh9.jpg" alt="Ảnh 9" loading="lazy">
-  <img src="hinhtngan/anh10.jpg" alt="Ảnh 10" loading="lazy">
-  <img src="hinhtngan/avara.jpg.jpg" alt="Avatar" loading="lazy">
-  <img src="hinhtngan/z7384682605918_83a60727b5cd329fd90db8fd4859cfa9.jpg" alt="Ảnh 11" loading="lazy">
-  <img src="hinhtngan/z7384682606203_9dde1a794d2808d761029ce8cb5a3468.jpg" alt="Ảnh 12" loading="lazy">
-  <img src="hinhtngan/z7384682613517_b5f728afc6add53f9995829d0e1208cf.jpg" alt="Ảnh 13" loading="lazy">
-  <img src="hinhtngan/z7384682619566_f292add528c52fb7ed613890d3c85c83.jpg" alt="Ảnh 14" loading="lazy">
-  <img src="hinhtngan/z7384682623197_f5991f3f9178e9a30ae4e42202065e7e.jpg" alt="Ảnh 15" loading="lazy">
-  <img src="hinhtngan/z7384682665019_cb9ebe0108ec608b50942ff089ed2199.jpg" alt="Ảnh 16" loading="lazy">
-  <img src="hinhtngan/z7384682680565_8f5d23844214bdc1e277690f5b749d9f.jpg" alt="Ảnh 17" loading="lazy">
-  <img src="hinhtngan/z7384682689444_84a53c95875616643e9a432768f0cd2f.jpg" alt="Ảnh 18" loading="lazy">
-  <img src="hinhtngan/z7384682689754_3d750d5ae05988cf24a3d42cc7cae9c3.jpg" alt="Ảnh 19" loading="lazy">
-  <img src="hinhtngan/z7384682693739_f2a8ba98dbcf1100090e7c335f612dcc.jpg" alt="Ảnh 20" loading="lazy">
-  <img src="hinhtngan/z7384688935919_973b5c2dc6faa806bfcafef78f39d85e.jpg" alt="Ảnh 21" loading="lazy">
-</section>
-<footer>© 2026 Dương Đức Quân – DuongDucQuann</footer>
+
+  <nav class="links" aria-label="Mạng xã hội">
+    <a class="btn btn-fb" href="https://www.facebook.com/DuongDucQuann" target="_blank" rel="noopener">
+      <span class="btn-icon">📘</span> Facebook
+    </a>
+    <a class="btn btn-ghost" href="https://www.tiktok.com/@duongducquann" target="_blank" rel="noopener">
+      <span class="btn-icon">🎵</span> TikTok
+    </a>
+    <a class="btn btn-ghost" href="https://github.com/duongducquan" target="_blank" rel="noopener">
+      GitHub
+    </a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/duongducquan" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+  </nav>
+
+  <section class="gallery" aria-label="Hình ảnh">
+    <div class="gallery-item"><img src="hinhtngan/anh1.jpg.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh2.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh3.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh4.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh5.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh6.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh7.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh8.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh9.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/anh10.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/avara.jpg.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682605918_83a60727b5cd329fd90db8fd4859cfa9.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682606203_9dde1a794d2808d761029ce8cb5a3468.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682613517_b5f728afc6add53f9995829d0e1208cf.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682619566_f292add528c52fb7ed613890d3c85c83.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682623197_f5991f3f9178e9a30ae4e42202065e7e.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682665019_cb9ebe0108ec608b50942ff089ed2199.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682680565_8f5d23844214bdc1e277690f5b749d9f.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682689444_84a53c95875616643e9a432768f0cd2f.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682689754_3d750d5ae05988cf24a3d42cc7cae9c3.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384682693739_f2a8ba98dbcf1100090e7c335f612dcc.jpg" alt="Hình ảnh" loading="lazy"></div>
+    <div class="gallery-item"><img src="hinhtngan/z7384688935919_973b5c2dc6faa806bfcafef78f39d85e.jpg" alt="Hình ảnh" loading="lazy"></div>
+  </section>
+
+  <footer>© 2026 Dương Đức Quân – DuongDucQuann</footer>
+</div>
+
 </body>
 </html>
