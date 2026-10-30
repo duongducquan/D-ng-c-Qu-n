@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tỏ tình giữa vũ trụ | 22 khoảnh khắc của chúng ta</title>
+  <meta name="description" content="Trang tỏ tình chủ đề vũ trụ với 22 bức ảnh bay ngang lấp lánh giữa muôn vì sao." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Canvas bầu trời sao (render bởi stars.js) -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <main class="stage" aria-label="Tỏ tình giữa vũ trụ">
+    <header class="intro">
+      <div class="intro-inner">
+        <h1 class="title">Giữa vũ trụ bao la, anh chỉ muốn nói...</h1>
+        <p class="subtitle" id="typewriter" aria-live="polite"></p>
+        <div class="hearts">
+          <span class="heart">❤</span>
+          <span class="heart">❤</span>
+          <span class="heart">❤</span>
+        </div>
+        <div class="cta-row">
+          <button class="btn primary" id="openMailbox">Mở hòm thư trái tim</button>
+          <button class="btn ghost" id="toggleTwinkle">Tăng lấp lánh ảnh</button>
+          <button class="btn ghost" id="boostStars">Tăng sao nền</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 4 dải ảnh bay ngang: 2 trái → phải, 2 phải → trái -->
+    <section class="bands" aria-label="22 ảnh bay ngang">
+      <div class="band band-top ltr" data-speed="36"></div>
+      <div class="band band-upper rtl" data-speed="40"></div>
+      <div class="band band-lower ltr" data-speed="46"></div>
+      <div class="band band-bottom rtl" data-speed="54"></div>
+    </section>
+
+    <section class="letters" aria-label="Những lá thư đã gửi">
+      <div class="letters-inner">
+        <h2 class="letters-title">Những lời muốn nói</h2>
+        <div id="lettersList" class="letters-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>22 khoảnh khắc – Một tình yêu</p>
+    </footer>
+  </main>
+
+  <!-- Modal hòm thư trái tim -->
+  <div class="mailbox-modal" id="mailbox" aria-hidden="true" role="dialog" aria-label="Hòm thư trái tim">
+    <div class="mailbox-dialog">
+      <button class="mailbox-close" id="closeMailbox" aria-label="Đóng">×</button>
+      <div class="mailbox-heart" aria-hidden="true"></div>
+      <form class="mailbox-form" id="mailForm">
+        <h3>Gửi lời nhắn</h3>
+        <div class="form-row">
+          <label for="sender">Tên của anh/em</label>
+          <input id="sender" name="sender" type="text" placeholder="Viết tên..." maxlength="40" required />
+        </div>
+        <div class="form-row">
+          <label for="mood">Cảm xúc</label>
+          <div class="moods" id="mood" role="group" aria-label="Chọn cảm xúc">
+            <button type="button" class="chip" data-value="Say đắm">💖 Say đắm</button>
+            <button type="button" class="chip" data-value="Nhung nhớ">🌙 Nhung nhớ</button>
+            <button type="button" class="chip" data-value="Hạnh phúc">✨ Hạnh phúc</button>
+            <button type="button" class="chip" data-value="Mơ mộng">🌸 Mơ mộng</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="message">Lời nhắn</label>
+          <textarea id="message" name="message" rows="4" placeholder="Viết điều muốn nói..." maxlength="240" required></textarea>
+          <div class="counter"><span id="charCount">0</span>/240</div>
+        </div>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Gửi</button>
+          <button class="btn ghost" type="button" id="clearLetters">Xóa tất cả thư</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="stars.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
